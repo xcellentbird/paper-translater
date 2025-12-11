@@ -14,7 +14,7 @@ ARXIV_PDF_URL_PREFIX = "https://arxiv.org/pdf/"
 
 def load_url(url: str) -> bytes:
     """주어진 URL 에서 바이너리 데이터를 받아온다."""
-    response = httpx.get(url)
+    response = httpx.get(url, timeout=10.0)
     response.raise_for_status()
     return response.content
 

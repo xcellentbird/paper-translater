@@ -17,7 +17,7 @@ def pdf_loader():
 
 def test_download_pdf(pdf_loader):
     # when: PDF 를 다운로드한다
-    pdf_path = pdf_loader.download_pdf(TEST_PDF_URL)
+    pdf_path = pdf_loader.download_pdf(TEST_PDF_URL, save_root=TEST_SAVE_PATH)
 
     # then: 지정한 경로에 파일이 생성되어 있어야 한다
     assert pdf_path.exists()
